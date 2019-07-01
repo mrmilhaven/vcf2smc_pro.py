@@ -2,7 +2,7 @@
 
 An improvement to Terhorst et al.'s vcf2smc. It is done by assigning a more accurate ancestral allele when creating the input files for smc++. It also has an experimental setting to correct for low coverage of highly homozygous individuals by utilizing pseudo-haploidism.
 
-To run this program, you will need 5 arguments, with an optional 6th. NOTE: This can only be done on specific contigs at a time.
+To run this program, you will need 5 arguments, with an optional 6th. NOTE: This can only be done on specific contigs at a time. All files can only contain information about that contig.
 * **Names List** - A .txt file documenting the distinguished individuals and populations
 * **VCF File** - This is a file of all called SNPS on the individuals you want to run.
 * **Ancestral BED** - A file of the VCF positions in the first three columns, and the LiftOver positions on the fourth column
@@ -61,4 +61,4 @@ A space delimited file where the first column are the chromosome names present i
 ### Ancestral Fasta:
 The inferred ancestral sequence. This can be done by utilizing pairwise alignments and creating a sort of "consensus sequence" between closely related species.
 
-After the SMC files are created, you can move onto the next step, using smc++
+After the SMC files are created, you can move onto the next step, using [smc++](https://github.com/popgenmethods/smcpp).
