@@ -55,7 +55,7 @@ chr5    180112552       180112553       chr2_3746
 chr5    180112589       180112590       chr2_3783
 ```
 
-Of course, if your ancestral sequence is the same species, the number in the third column will be equal to the number in the 5th column.
+Of course, if your ancestral sequence is the same species, the chromosome in the first column should be the same as the chromosome in the 5th column, as should the number in the third column be equal to the number in the 5th column.
 
 ### Chromosome Converter:
 A space delimited file where the first column are the chromosome names present in the VCF file, and the second column are the corresponding chromosome names in the ancestral FASTA file.
