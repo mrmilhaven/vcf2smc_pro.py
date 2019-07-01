@@ -1,6 +1,6 @@
 # vcf2smc_pro.py
 
-An improvement to Terhorst et al.'s vcf2smc. It is done by assigning a more accurate ancestral allele when creating the input files for smc++. It also has an experimental setting to correct for low coverage of highly homozygous individuals by utilizing pseudo-haploidism.
+An improvement to Terhorst et al.'s [vcf2smc](https://github.com/popgenmethods/smcpp). It is done by assigning a more accurate ancestral allele when creating the input files for smc++. It also has an experimental setting to correct for low coverage of highly homozygous individuals by utilizing pseudo-haploidism.
 
 To run this program, you will need 5 arguments, with an optional 6th. NOTE: This can only be done on specific contigs at a time. All files can only contain information about that contig.
 * **Names List** - A .txt file documenting the distinguished individuals and populations
