@@ -10,7 +10,7 @@ To run this program, you will need 5 arguments, with an optional 6th. NOTE: This
 * **Ancestral Fasta** - An ancestral sequence of the population in question
 * **Mask** (optional) - A standard mask file in BED format
 
-## How to Make Arguments:
+## Creating Input Data:
 
 ### Names List:
 To create the names list file, put the two distinguished individuals (AS NAMED IN THE VCF) on the first line, space delimited, followed by their ploidy. In general, the ploidy should be set to d (Diploid) for now. On the following lines, make the same pattern, as shown below:
