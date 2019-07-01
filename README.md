@@ -5,36 +5,36 @@ An improvement to Terhorst et al.'s vcf2smc. It is done by assigning a more accu
 USAGE
 To run this program, you will need 5 arguments, with an optional 6th:
 NOTE: This can only be done on specific contigs at a time. This will need to be run
-Names List - A .txt file documenting the distinguished individuals and populations
-VCF File - This is a file of all called SNPS on the individuals you want to run.
-Ancestral BED - A file of the VCF positions in the first three columns, and the LiftOver positions on the fourth column
-converter - A space-delimited file with corresponding chromosome names in the ancestral FASTA and VCF
-Ancestral FASTA - An ancestral sequence of the population in question
-Mask (optional) - A standard mask file in BED format
+* **Names List** - A .txt file documenting the distinguished individuals and populations
+* **VCF File** - This is a file of all called SNPS on the individuals you want to run.
+* **Ancestral BED** - A file of the VCF positions in the first three columns, and the LiftOver positions on the fourth column
+* **Chromosome Converter** - A space-delimited file with corresponding chromosome names in the ancestral FASTA and VCF
+* **Ancestral Fasta** - An ancestral sequence of the population in question
+* **Mask** (optional) - A standard mask file in BED format
 
-HOW TO MAKE ARGUMENTS:
+## How to Make Arguments:
 
-NAMES LIST:
+### Names List:
 To create the names list file, put the two distinguished individuals (AS NAMED IN THE VCF) on the first line, space delimited, followed by their ploidy. In general, the ploidy should be set to d (Diploid) for now. On the following lines, make the same pattern, as shown below:
 
 Dist_Ind_1,d Dist_Int_2,d
 Pop1_ind1,d Pop1_ind2,d
 Pop2_ind1,d Pop2_ind2,d
 
-VCF FILE:
+### VCF File:
 Input a VCF File with indels filtered out.
 
-ANCESTRAL BED:
+### Ancestral BED:
 This file is a combination of two different files - a BED file of the positions of the VCF, and the liftOver positions on what would be the ancestral genome species. Here is a sample of how to make it:
-
+```
 1. [zcat | ]awk '{if($0!~"#") print $1"\t"$2-1"\t"$2"\t"$1"_"$2}' example.vcf[.gz] > SNPs.bed
-
+```
 NOTE: If your ancestral genome is the same species, you can stop here. The next liftOver step is only if the ancestral sequence is in the form of another species.
-
+```
 2. liftOver SNPs.bed map_to_anc_seq_species.chain Anc_bed.bed unmapped
-
+```
 Your final file should look something like this:
-
+```
 chr5    175532976       175532977       chr2_1170
 chr5    175532921       175532922       chr2_1225
 chr5    175532805       175532806       chr2_1341
@@ -53,11 +53,12 @@ chr5    180112107       180112108       chr2_3305
 chr5    180112233       180112234       chr2_3421
 chr5    180112552       180112553       chr2_3746
 chr5    180112589       180112590       chr2_3783
+```
 
 Of course, if your ancestral sequence is the same species, the number in the third column will be equal to the number in the 5th column.
 
-CONVERTER:
+### Chromosome Converter:
 A space delimited file where the first column are the chromosome names present in the VCF file, and the second column are the corresponding chromosome names in the ancestral FASTA file.
 
-ANCESTRAL FASTA:
+### Ancestral Fasta:
 The inferred ancestral sequence. This can be done by utilizing pairwise alignments and creating a sort of "consensus sequence" between closely related species.
