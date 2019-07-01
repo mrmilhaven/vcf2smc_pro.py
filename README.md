@@ -20,7 +20,7 @@ Pop1_ind1,d Pop1_ind2,d
 Pop2_ind1,d Pop2_ind2,d
 ```
 ### VCF File:
-Input a VCF File with indels filtered out.
+Input a VCF File with indels filtered out. Software that is capable of doing this is [samtools mpileup](http://www.htslib.org/doc/samtools.html),[GATK UnifiedGenotyper](https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php), and [GATK HaplotypeCaller](https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php).
 
 ### Ancestral BED:
 This file is a combination of two different files - a BED file of the positions of the VCF, and the liftOver positions on what would be the ancestral genome species. Here is a sample of how to make it:
