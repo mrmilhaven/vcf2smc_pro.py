@@ -16,11 +16,11 @@ NOTE: This can only be done on specific contigs at a time. This will need to be 
 
 ### Names List:
 To create the names list file, put the two distinguished individuals (AS NAMED IN THE VCF) on the first line, space delimited, followed by their ploidy. In general, the ploidy should be set to d (Diploid) for now. On the following lines, make the same pattern, as shown below:
-
-Dist_Ind_1,d Dist_Int_2,d
+```
+Dist_ind_1,d Dist_ind_2,d
 Pop1_ind1,d Pop1_ind2,d
 Pop2_ind1,d Pop2_ind2,d
-
+```
 ### VCF File:
 Input a VCF File with indels filtered out.
 
