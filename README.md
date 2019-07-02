@@ -2,7 +2,7 @@
 
 An improvement to Terhorst et al.'s [vcf2smc](https://github.com/popgenmethods/smcpp). It is done by assigning a more accurate ancestral allele when creating the input files for smc++. It also has an experimental setting to correct for low coverage of highly homozygous individuals by utilizing pseudo-haploidism.
 
-To run this program, you will need 5 arguments, with an optional 6th. NOTE: This can only be done on specific contigs at a time. All files can only contain information about that contig.
+To run this program, you will need 5 arguments, with an optional 6th. NOTE: This can only be done on one contig at a time. All files can only contain information about that contig.
 * **Names List** - A .txt file documenting the distinguished individuals and populations
 * **VCF File** - This is a file of all called SNPS on the individuals you want to run.
 * **Ancestral BED** - A file of the VCF positions in the first three columns, and the LiftOver positions on the fourth column
@@ -13,7 +13,7 @@ To run this program, you will need 5 arguments, with an optional 6th. NOTE: This
 ## Creating Input Data:
 
 ### Names List:
-To create the names list file, put the two distinguished individuals (AS NAMED IN THE VCF) on the first line, space delimited, followed by their ploidy. In general, the ploidy should be set to d (Diploid) for now. On the following lines, make the same pattern, as shown below:
+To create the names list file, put the two distinguished individuals (AS NAMED IN THE VCF) on the first line, space delimited, followed by their ploidy. In general, the ploidy should be set to d (Diploid) for now. The program also allows for using h (pseudohaploidy), but it is not recommended. On the following lines, make the same pattern, as shown below:
 ```
 Dist_ind_1,d Dist_ind_2,d
 Pop1_ind1,d Pop1_ind2,d
