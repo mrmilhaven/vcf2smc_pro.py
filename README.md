@@ -59,6 +59,6 @@ Of course, if your ancestral sequence is the same species, the chromosome in the
 A space delimited file where the first column are the chromosome names present in the VCF file, and the second column are the corresponding chromosome names in the ancestral FASTA file.
 
 ### Ancestral Fasta:
-The inferred ancestral sequence. This can be done by utilizing pairwise alignments and creating a sort of "consensus sequence" between closely related species.
+The inferred ancestral sequence. This can be done by utilizing pairwise alignments and creating a sort of "consensus sequence" between closely related species. In our example, we used the [hg19 multiz100way alignment](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/multiz100way/), taking only homologous regions between nomLeu3, hg19 and rheMac3. Sites where hg19 and nomLeu3 disagreed, rheMac3 was used to reorient them.
 
 After the SMC files are created, you can move onto the next step, using [smc++](https://github.com/popgenmethods/smcpp).
