@@ -6,7 +6,6 @@ import vcf
 import pysam
 import sys
 import time
-from sys import argv
 names_input = argv[1]
 vcf_file = 'NLE_noAsia.chr2.vcf.gz' #argv[2]
 ancestral_bed = 'NLE_noAsia.chr2.bed' #argv[3]
