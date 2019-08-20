@@ -114,8 +114,9 @@ output_2 = open(str(pop2)+".smc",'w')
 output_12 = open(str(pop1)+"_"+str(pop2)+".smc",'w')
 output_21 = open(str(pop2)+"_"+str(pop1)+".smc",'w')
 
+###Creates header for the top of the input file###
 
-smcpp_beginning = "# SMC++ {\"version\": \"1.15.2\", \"pids\": "
+smcpp_beginning = "# SMC++ {\"version\": \"1.15.2\", \"pids\": " ### DONT FORGET TO CHANGE VERSION VALUE###
 dist_ind_name_pop1 = individuals[0].name
 dist_ind_name_pop2 = individuals[1].name
 
@@ -295,6 +296,8 @@ total_span = 0
 counter = 0
 
 end_mask_prev = 0
+
+### Checks if mask is loaded ###
 try:
         temp_mask = open(mask_file,'r')
         #raw_input("Mask Found! Continue?...")
@@ -309,7 +312,7 @@ except:
         raw_input("Mask not found. Is this correct?")
 
 if temp_mask != "none":
-
+### Builds Masked Input File ###
     for line in anc_bed:
         counter +=1	
         chromosome_ancestor,start_pos_ancestor,end_pos_ancestor,original_coord_gibbon = line.split('\t')
